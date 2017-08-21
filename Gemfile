@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
+gem 'hirb'
+gem 'faker'
+
+gem 'kaminari'
+gem 'activeadmin', github: 'activeadmin'
+gem 'active_model_serializers'
 
 gem 'pry'
 gem 'pry-nav'
