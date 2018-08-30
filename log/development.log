@@ -1601,3 +1601,279 @@ Processing by ProductsController#show as JSON
   [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 13]]
   [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" INNER JOIN "ordered_products" ON "products"."id" = "ordered_products"."product_id" WHERE "ordered_products"."order_id" = ?  [["order_id", 20]]
 Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddFieldsToProducts (20160221021155)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "aproducts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "inventory" integer, "description" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "products"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory","description") VALUES (12, 'tv', 912, '2016-02-23 05:10:50.434435', '2016-02-23 05:10:50.434435', 0, 'Id ullam odit qui sequi ex dolores sed. Earum laboriosam error tenetur molestiae et. Quia consequatur nobis rerum ut nihil. Earum ex ut natus.')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory","description") VALUES (13, 'vcr', 1409, '2016-02-23 05:10:50.438207', '2016-02-23 05:10:50.438207', 0, 'Laboriosam occaecati cum et eos totam repellat. Eos ab libero ut quia. Vero ipsam provident rerum tempore sint aut. Laborum voluptas ut sequi blanditiis aliquam nemo. Eaque maiores sit molestiae tempora blanditiis porro.')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory","description") VALUES (14, 'macbook', 1019, '2016-02-23 05:10:50.441690', '2016-02-23 05:10:50.441690', 3, 'Magni dolores est eum dolorum sequi et eligendi. Non necessitatibus labore modi sit. Officia pariatur qui quia veniam. Sint accusantium atque itaque eligendi harum tenetur. Quisquam quia similique.')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory","description") VALUES (15, 'macbook air', 921, '2016-02-23 05:10:50.445803', '2016-02-23 05:10:50.445803', 1, 'Quas illo ullam laboriosam voluptatibus fugiat sit. Soluta et eos. Ad alias facere dolorum non earum explicabo.')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory","description") VALUES (16, 'mouse', 1347, '2016-02-23 05:10:50.449012', '2016-02-23 05:10:50.449012', 1, 'Non qui consectetur earum perspiciatis ducimus. Itaque consectetur libero porro ipsam quibusdam blanditiis possimus. Commodi quia rerum ea. Tempora hic est eius fugit. Voluptatem fugit voluptatem.')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory","description") VALUES (17, 'chair', 673, '2016-02-23 05:10:50.452612', '2016-02-23 05:10:50.452612', 0, 'Consequatur quaerat et officiis et. Maiores nisi explicabo at amet ullam architecto. Voluptatem debitis alias. Dolores vel soluta repellat adipisci dolorum impedit.')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory","description") VALUES (18, 'desk', 156, '2016-02-23 05:10:50.459282', '2016-02-23 05:10:50.459282', 3, 'Illo et eligendi aperiam sed maiores unde ut. Voluptates tenetur pariatur dolore consequatur. Eum ut velit repudiandae aut odio nam qui. Dolores quam odit occaecati quo quia rerum.')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory","description") VALUES (19, 'lamp', 193, '2016-02-23 05:10:50.463361', '2016-02-23 05:10:50.463361', 0, 'Occaecati deleniti ut odio molestiae. Sit non impedit sunt dolorem magni. Aperiam et officiis repellat. Ut aut et. Cum distinctio voluptatibus id.')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory","description") VALUES (20, 'water bottle', 338, '2016-02-23 05:10:50.466544', '2016-02-23 05:10:50.466544', 2, 'Ex et ullam. Aliquid ullam maxime quia cumque. Et eum molestiae non voluptatum omnis dolorum similique.')[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "products"
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "inventory" integer) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "aproducts"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "products" ("id","name","price","created_at","updated_at","inventory") VALUES (12, 'tv', 912, '2016-02-23 05:10:50.434435', '2016-02-23 05:10:50.434435', 0)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "products" ("id","name","price","created_at","updated_at","inventory") VALUES (13, 'vcr', 1409, '2016-02-23 05:10:50.438207', '2016-02-23 05:10:50.438207', 0)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "products" ("id","name","price","created_at","updated_at","inventory") VALUES (14, 'macbook', 1019, '2016-02-23 05:10:50.441690', '2016-02-23 05:10:50.441690', 3)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "products" ("id","name","price","created_at","updated_at","inventory") VALUES (15, 'macbook air', 921, '2016-02-23 05:10:50.445803', '2016-02-23 05:10:50.445803', 1)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "products" ("id","name","price","created_at","updated_at","inventory") VALUES (16, 'mouse', 1347, '2016-02-23 05:10:50.449012', '2016-02-23 05:10:50.449012', 1)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "products" ("id","name","price","created_at","updated_at","inventory") VALUES (17, 'chair', 673, '2016-02-23 05:10:50.452612', '2016-02-23 05:10:50.452612', 0)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "products" ("id","name","price","created_at","updated_at","inventory") VALUES (18, 'desk', 156, '2016-02-23 05:10:50.459282', '2016-02-23 05:10:50.459282', 3)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "products" ("id","name","price","created_at","updated_at","inventory") VALUES (19, 'lamp', 193, '2016-02-23 05:10:50.463361', '2016-02-23 05:10:50.463361', 0)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "products" ("id","name","price","created_at","updated_at","inventory") VALUES (20, 'water bottle', 338, '2016-02-23 05:10:50.466544', '2016-02-23 05:10:50.466544', 2)[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "aproducts"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "aproducts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "inventory" integer) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "products"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory") VALUES (12, 'tv', 912, '2016-02-23 05:10:50.434435', '2016-02-23 05:10:50.434435', 0)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory") VALUES (13, 'vcr', 1409, '2016-02-23 05:10:50.438207', '2016-02-23 05:10:50.438207', 0)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory") VALUES (14, 'macbook', 1019, '2016-02-23 05:10:50.441690', '2016-02-23 05:10:50.441690', 3)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory") VALUES (15, 'macbook air', 921, '2016-02-23 05:10:50.445803', '2016-02-23 05:10:50.445803', 1)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory") VALUES (16, 'mouse', 1347, '2016-02-23 05:10:50.449012', '2016-02-23 05:10:50.449012', 1)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory") VALUES (17, 'chair', 673, '2016-02-23 05:10:50.452612', '2016-02-23 05:10:50.452612', 0)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory") VALUES (18, 'desk', 156, '2016-02-23 05:10:50.459282', '2016-02-23 05:10:50.459282', 3)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory") VALUES (19, 'lamp', 193, '2016-02-23 05:10:50.463361', '2016-02-23 05:10:50.463361', 0)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aproducts" ("id","name","price","created_at","updated_at","inventory") VALUES (20, 'water bottle', 338, '2016-02-23 05:10:50.466544', '2016-02-23 05:10:50.466544', 2)[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "products"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "aproducts"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "products" ("id","name","price","created_at","updated_at") VALUES (12, 'tv', 912, '2016-02-23 05:10:50.434435', '2016-02-23 05:10:50.434435')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "products" ("id","name","price","created_at","updated_at") VALUES (13, 'vcr', 1409, '2016-02-23 05:10:50.438207', '2016-02-23 05:10:50.438207')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "products" ("id","name","price","created_at","updated_at") VALUES (14, 'macbook', 1019, '2016-02-23 05:10:50.441690', '2016-02-23 05:10:50.441690')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "products" ("id","name","price","created_at","updated_at") VALUES (15, 'macbook air', 921, '2016-02-23 05:10:50.445803', '2016-02-23 05:10:50.445803')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "products" ("id","name","price","created_at","updated_at") VALUES (16, 'mouse', 1347, '2016-02-23 05:10:50.449012', '2016-02-23 05:10:50.449012')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "products" ("id","name","price","created_at","updated_at") VALUES (17, 'chair', 673, '2016-02-23 05:10:50.452612', '2016-02-23 05:10:50.452612')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "products" ("id","name","price","created_at","updated_at") VALUES (18, 'desk', 156, '2016-02-23 05:10:50.459282', '2016-02-23 05:10:50.459282')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "products" ("id","name","price","created_at","updated_at") VALUES (19, 'lamp', 193, '2016-02-23 05:10:50.463361', '2016-02-23 05:10:50.463361')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "products" ("id","name","price","created_at","updated_at") VALUES (20, 'water bottle', 338, '2016-02-23 05:10:50.466544', '2016-02-23 05:10:50.466544')[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "aproducts"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20160221021155"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Migrating to CreateOrderedproducts (20160125172450)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "ordered_products"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20160125172450"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Migrating to CreateProducts (20160125172335)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "products"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20160125172335"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Migrating to CreateCustomers (20160125172252)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "customers"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20160125172252"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Migrating to CreateInvoices (20160125170351)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "invoices"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20160125170351"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Migrating to CreateOrders (20160125165439)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "orders"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20160125165439"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateOrders (20160125165439)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "customer_id" integer, "invoice_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160125165439"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateInvoices (20160125170351)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "invoices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160125170351"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateCustomers (20160125172252)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160125172252"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateProducts (20160125172335)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160125172335"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateOrderedproducts (20160125172450)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "ordered_products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "order_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160125172450"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddFieldsToProducts (20160221021155)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "products" ADD "inventory" integer[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "products" ADD "description" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160221021155"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders"
+  [1m[36mInvoice Load (0.1ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "tv"], ["price", 1235], ["inventory", 3], ["description", "Est vitae sint natus qui fuga. Quae eius ut qui ut. Neque dolore quia. Id unde sit est aspernatur quas."], ["created_at", "2018-08-30 17:39:18.247589"], ["updated_at", "2018-08-30 17:39:18.247589"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "vcr"], ["price", 1277], ["inventory", 1], ["description", "Reprehenderit ducimus eum dolor assumenda eos. Architecto asperiores est fugiat rerum. Dolor eius autem id reprehenderit labore nam excepturi. A consequatur minus. Ut ad temporibus natus et dolorem voluptatem."], ["created_at", "2018-08-30 17:39:18.256382"], ["updated_at", "2018-08-30 17:39:18.256382"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "macbook"], ["price", 1157], ["inventory", 0], ["description", "Perspiciatis excepturi magni doloremque. Assumenda omnis repellat. Sunt quidem quod dolor nihil. Quibusdam reiciendis omnis ratione ut similique."], ["created_at", "2018-08-30 17:39:18.261548"], ["updated_at", "2018-08-30 17:39:18.261548"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "macbook air"], ["price", 291], ["inventory", 0], ["description", "Sed temporibus quibusdam id aut. Ducimus voluptate aut eaque numquam porro. Laboriosam soluta omnis."], ["created_at", "2018-08-30 17:39:18.265504"], ["updated_at", "2018-08-30 17:39:18.265504"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "mouse"], ["price", 934], ["inventory", 2], ["description", "Autem quia eaque velit aut incidunt fugit. Dolorem repudiandae qui perspiciatis. Cupiditate veritatis et in."], ["created_at", "2018-08-30 17:39:18.269051"], ["updated_at", "2018-08-30 17:39:18.269051"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "chair"], ["price", 1496], ["inventory", 1], ["description", "Exercitationem et asperiores soluta sint consectetur. Natus voluptas placeat quibusdam vero aut assumenda. Facilis et nihil velit et in. Minima a sit facere sed autem quo. Ea est suscipit sed vel sed."], ["created_at", "2018-08-30 17:39:18.272645"], ["updated_at", "2018-08-30 17:39:18.272645"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "desk"], ["price", 167], ["inventory", 0], ["description", "Ab debitis nostrum eius. Quod dignissimos animi et. Ut dolor nihil et. Commodi odit eum sit. Modi ducimus veritatis dignissimos tempore sunt quis."], ["created_at", "2018-08-30 17:39:18.277673"], ["updated_at", "2018-08-30 17:39:18.277673"]]
+  [1m[35m (4.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "lamp"], ["price", 253], ["inventory", 0], ["description", "Et sit non earum consequuntur est sed. Voluptas eum corporis nisi porro ut doloribus praesentium. Dolorum velit explicabo tempore aspernatur nostrum. Suscipit explicabo dolore rerum sit. Tempore beatae qui."], ["created_at", "2018-08-30 17:39:18.285219"], ["updated_at", "2018-08-30 17:39:18.285219"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "price", "inventory", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "water bottle"], ["price", 1258], ["inventory", 3], ["description", "Fugiat accusamus alias sit quae laudantium. Ab aliquid doloribus. Culpa debitis voluptas officiis."], ["created_at", "2018-08-30 17:39:18.290371"], ["updated_at", "2018-08-30 17:39:18.290371"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "customers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Ulices Schinner"], ["created_at", "2018-08-30 17:39:18.305094"], ["updated_at", "2018-08-30 17:39:18.305094"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ada Ernser"], ["created_at", "2018-08-30 17:39:18.310609"], ["updated_at", "2018-08-30 17:39:18.310609"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "customers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Bernie Homenick"], ["created_at", "2018-08-30 17:39:18.315259"], ["updated_at", "2018-08-30 17:39:18.315259"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jalyn Feeney"], ["created_at", "2018-08-30 17:39:18.319913"], ["updated_at", "2018-08-30 17:39:18.319913"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "customers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Scot Pollich I"], ["created_at", "2018-08-30 17:39:18.325476"], ["updated_at", "2018-08-30 17:39:18.325476"]]
+  [1m[36m (4.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invoices" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-08-30 17:39:18.333707"], ["updated_at", "2018-08-30 17:39:18.333707"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "invoices" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2018-08-30 17:39:18.337740"], ["updated_at", "2018-08-30 17:39:18.337740"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invoices" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-08-30 17:39:18.341502"], ["updated_at", "2018-08-30 17:39:18.341502"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "invoices" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2018-08-30 17:39:18.346001"], ["updated_at", "2018-08-30 17:39:18.346001"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invoices" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-08-30 17:39:18.349115"], ["updated_at", "2018-08-30 17:39:18.349115"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 5], ["invoice_id", 3], ["created_at", "2018-08-30 17:39:18.362739"], ["updated_at", "2018-08-30 17:39:18.362739"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 1], ["product_id", 6], ["created_at", "2018-08-30 17:39:18.420648"], ["updated_at", "2018-08-30 17:39:18.420648"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.2ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 1], ["invoice_id", 5], ["created_at", "2018-08-30 17:39:18.426292"], ["updated_at", "2018-08-30 17:39:18.426292"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 2], ["product_id", 8], ["created_at", "2018-08-30 17:39:18.432293"], ["updated_at", "2018-08-30 17:39:18.432293"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 4], ["invoice_id", 1], ["created_at", "2018-08-30 17:39:18.438991"], ["updated_at", "2018-08-30 17:39:18.438991"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 3], ["product_id", 9], ["created_at", "2018-08-30 17:39:18.445259"], ["updated_at", "2018-08-30 17:39:18.445259"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 4], ["invoice_id", 5], ["created_at", "2018-08-30 17:39:18.449492"], ["updated_at", "2018-08-30 17:39:18.449492"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 4], ["product_id", 5], ["created_at", "2018-08-30 17:39:18.454777"], ["updated_at", "2018-08-30 17:39:18.454777"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.2ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 2], ["invoice_id", 2], ["created_at", "2018-08-30 17:39:18.460140"], ["updated_at", "2018-08-30 17:39:18.460140"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 5], ["product_id", 4], ["created_at", "2018-08-30 17:39:18.465617"], ["updated_at", "2018-08-30 17:39:18.465617"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 4], ["invoice_id", 4], ["created_at", "2018-08-30 17:39:18.470006"], ["updated_at", "2018-08-30 17:39:18.470006"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 6], ["product_id", 2], ["created_at", "2018-08-30 17:39:18.475078"], ["updated_at", "2018-08-30 17:39:18.475078"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 5], ["invoice_id", 1], ["created_at", "2018-08-30 17:39:18.479498"], ["updated_at", "2018-08-30 17:39:18.479498"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 7], ["product_id", 2], ["created_at", "2018-08-30 17:39:18.485379"], ["updated_at", "2018-08-30 17:39:18.485379"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 5], ["invoice_id", 5], ["created_at", "2018-08-30 17:39:18.490615"], ["updated_at", "2018-08-30 17:39:18.490615"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 8], ["product_id", 7], ["created_at", "2018-08-30 17:39:18.496383"], ["updated_at", "2018-08-30 17:39:18.496383"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.2ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 2], ["invoice_id", 5], ["created_at", "2018-08-30 17:39:18.501109"], ["updated_at", "2018-08-30 17:39:18.501109"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 9], ["product_id", 1], ["created_at", "2018-08-30 17:39:18.507067"], ["updated_at", "2018-08-30 17:39:18.507067"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT "invoices".* FROM "invoices"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("customer_id", "invoice_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["customer_id", 5], ["invoice_id", 2], ["created_at", "2018-08-30 17:39:18.511863"], ["updated_at", "2018-08-30 17:39:18.511863"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ordered_products" ("order_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["order_id", 10], ["product_id", 4], ["created_at", "2018-08-30 17:39:18.517540"], ["updated_at", "2018-08-30 17:39:18.517540"]]
+  [1m[35m (1.9ms)[0m  commit transaction
