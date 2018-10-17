@@ -8,17 +8,34 @@
 <script type="text/javascript" charset="utf-8">
 $(function() {
   $(".js-more").on("click", function() {
-    var id = $(this).data("id");
-    $.get("/products/" + id + "/description", function(description) {
-      $.get("/products/" + id + "/inventory", function(inventory) {
-        var inventoryText = "<strong>Available</strong>";
-        if(inventory === "false"){
-          inventoryText = "<strong>Sold Out</strong>";
-        }
-        var descriptionText = "<p>" + description + "</p><p>" + inventoryText + "</p>";
-        $("#product-" + id).html(descriptionText);
-      });
+    let id = $(this).data("id");
+    $.get("/products/" + id + ".json", function(json) {
+
+      let inventoryText = "<strong>Available</strong>";
+      if(json.inventory === 0){
+        inventoryText = "<strong>Sold Out</strong>";
+      }
+      let descriptionText = "<p>" + json.description + "</p><p>" + inventoryText + "</p>";
+
+      let src = $('#orders-template').html();
+
+      let orders = json.orders
+
+      let template = Handlebars.compile(src)
+      let ordersList = template(orders)
+
+      
+      $("#product-" + id).html(descriptionText + ordersList);
     });
   });
 });
+</script>
+
+<script id='orders-template' type="text/x-handlebars-template">
+  <ul>
+    {{#each this}}
+      <li>Id: {{id}}</li>
+      <li>Created at: {{created_at}}</li>
+    {{/each}}
+  </ul>
 </script>
