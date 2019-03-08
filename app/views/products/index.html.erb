@@ -17,7 +17,11 @@ $(function() {
         }
         var descriptionText = "<p>" + data["description"] + "</p><p>" + inventoryText + "</p>";
         $("#product-" + id).html(descriptionText);
-        var orderList = "";
+//        var orderList = "";
+//        data["orders"].forEach(function(order) {
+//          orderList += '<li class="js-order" data-id="' + order["id"] + '">' + order["id"] + ' - ' + order["created_at"] + '</li>';
+//	});
+    });
   });
 });
 </script>
