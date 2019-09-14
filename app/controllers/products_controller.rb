@@ -1,17 +1,29 @@
 class ProductsController < ApplicationController
+
+
+
   def index
     @products = Product.all
+    respond_to do |format| 
+      format.html { render :index }
+      format.json { render json: @products.to_json(only: [:title, :description, :id])}
+    end 
   end
 
-  def inventory
-    product = Product.find(params[:id])
-    render plain: product.inventory > 0 ? true : false
-  end
+  # def inventory
+  #   product = Product.find(params[:id])
+  #   render plain: product.inventory > 0 ? true : false
+  # end
 
-  def description
+  # def description
+  #   product = Product.find(params[:id])
+  #   render plain: product.description
+  # end
+
+  def product_data 
     product = Product.find(params[:id])
-    render plain: product.description
-  end
+    render json: product.to_json(only: [:title, :description, :id])
+  end 
 
   def new
     @product = Product.new
@@ -27,6 +39,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html { render :show }
       format.json { render json: @product.to_json(only: [:id, :name, :description, :price, :inventory])}
+    # render json: @product, status: 200
     end
   end
 
